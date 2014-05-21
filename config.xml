@@ -16,5 +16,7 @@
     <author href="http://www.davidsheffield.org" email="jeremiah.sheffield@gmail.com">
         David Sheffield
     </author>
+    
+    <icon src="icon.png" />
 
 </widget>
