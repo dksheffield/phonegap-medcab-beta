@@ -14,11 +14,20 @@
         navigator.notification.alert("Cordova is ready!");
       }
       
-      function alertDismissed() {
-           alert('You dismissed');   
-      }
       
-      function showAlert() {
+      
+      
+    </script>
+  </head>
+  <body onload="onBodyLoad()">
+    <h1>HelloWorld2</h1>
+    <p>This is a sample Cordova application.</p>
+    <a onclick="showAlert();">Alert</a>
+  </body>
+</html>
+
+<script>
+    function showAlert() {
           alert('You clicked alert...'); 
           console.log('trying to show notification');
           navigator.notification.alert(
@@ -30,11 +39,8 @@
           console.log('just showed notification');
           alert('If you see this, then the code did not break!');
       }
-    </script>
-  </head>
-  <body onload="onBodyLoad()">
-    <h1>HelloWorld2</h1>
-    <p>This is a sample Cordova application.</p>
-    <a onclick="showAlert();">Alert</a>
-  </body>
-</html>
+      
+      function alertDismissed() {
+           alert('You dismissed');   
+      }
+</script>
