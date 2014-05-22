@@ -18,5 +18,7 @@
     </author>
     
     <icon src="icon.png" />
+    
+    <gap:plugin name="org.apache.cordova.dialogs" version="2.2.1" />
 
 </widget>
