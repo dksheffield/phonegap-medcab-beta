@@ -1,27 +1,361 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-    <widget xmlns   = "http://www.w3.org/ns/widgets"
-        xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id          = "com.phonegap.example"
-        versionCode = "10" 
-        version     = "1.0.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
+xmlns:gap = "http://phonegap.com/ns/1.0"
+id        = "com.phonegap.icontest"
+xmlns:android   = "http://schemas.android.com/apk/res/android"
+versionCode="10"
+version   = "1.0.0">
+<name>Medcab Beta</name>
+<description>
+An App That tests the basic features of build on your device.	 </description>
+<author href="https://build.phonegap.com" email="support@phonegap.com">
+Ismael Olusola Jimoh
+</author>
+<preference name="phonegap-version" value="3.3.0" />
+<preference name="fullscreen" value="false" />
+<preference name="webviewbounce" value="true" />
+<preference name="prerendered-icon" value="false" />
+<preference name="stay-in-webview" value="false" />
+<preference name="ios-statusbarstyle" value="black-opaque" />
+<preference name="detect-data-types" value="true" />
+<preference name="exit-on-suspend" value="false" />
+<preference name="show-splash-screen-spinner" value="true" />
+<preference name="auto-hide-splash-screen" value="true" />
+<preference name="EnableViewportScale" value="false" />
+<preference name="MediaPlaybackRequiresUserAction" value="false" />
+<preference name="AllowInlineMediaPlayback" value="false" />
+<preference name="BackupWebStorage" value="cloud" />
+<preference name="TopActivityIndicator" value="gray" />
+<preference name="KeyboardDisplayRequiresUserAction" value="true" />
+<preference name="HideKeyboardFormAccessoryBar" value="false" />
+<preference name="SuppressesIncrementalRendering" value="false" />
+<preference name="android-minSdkVersion" value="7" />
+<preference name="android-installLocation" value="internalOnly" />
+<preference name="SplashScreenDelay" value="5000" />
+<preference name="ErrorUrl" value=""/>
+<preference name="BackgroundColor" value=""/>
+<preference name="KeepRunning" value="true"/>
+<preference name="DisallowOverscroll" value="false"/>
+<preference name="LoadingDialog" value=","/> 
+<preference name="LoadUrlTimeoutValue" value="50000" />
+<preference name="disable-cursor" value="false" />
+<gap:platform name="ios" />
+<gap:platform name="android" />
+<gap:platform name="winphone" />
+<!--<feature name="http://api.phonegap.com/1.0/camera"/>
+<feature name="http://api.phonegap.com/1.0/contacts"/>
+<feature name="http://api.phonegap.com/1.0/geolocation"/>
+<feature name="http://api.phonegap.com/1.0/media"/>
+<feature name="http://api.phonegap.com/1.0/network"/>
+<feature name="http://api.phonegap.com/1.0/notification"/>-->
+<gap:plugin name="org.apache.cordova.camera"  />
+<gap:plugin name="org.apache.cordova.contacts"  />
+<!--<gap:plugin name="org.apache.cordova.device-motion"  />-->
+<gap:plugin name="org.apache.cordova.device-orientation"  />
+<gap:plugin name="org.apache.cordova.dialogs"/><!--Works Fine-->
+<gap:plugin name="org.apache.cordova.file" /><!--Breaks WP Build if version not specified, will need further test-->
+<!--<gap:plugin name="org.apache.cordova.console"  />-->
+<gap:plugin name="org.apache.cordova.device"/><!--Works Fine-->
+<gap:plugin name="org.apache.cordova.file-transfer" /><!--Works Fine-->
+<!--<gap:plugin name="org.apache.cordova.geolocation" />Works Fine-->
+<gap:plugin name="org.apache.cordova.globalization"  version="0.2.6"/><!--Not Tested-->
+<gap:plugin name="org.apache.cordova.inappbrowser"  />
+<gap:plugin name="org.apache.cordova.media" version="0.2.8"/><!--Not Tested-->
+<gap:plugin name="org.apache.cordova.media-capture" version="0.2.8" /><!--Currently on 0.2.4 but capture still breaks in android. Need Cordova update 0.2.7 to fix crashing issue-->
+<gap:plugin name="org.apache.cordova.network-information"  /><!--Works Fine-->
+<gap:plugin name="org.apache.cordova.splashscreen"  version="0.2.7"/>
+<gap:plugin name="org.apache.cordova.vibration"  /><!--Works Fine-->
+<!--<gap:plugin name="com.phonegap.plugins.barcodescanner" />-->
+<icon src="icons/winphone/iconWP8.png" gap:platform="winphone" />
+<icon src="icons/winphone/tileIconWP.png" gap:platform="winphone" gap:role="background" />
 
-    <!-- versionCode is optional and Android only -->
+<gap:splash src="splash/winphone/splash.jpg" gap:platform="winphone" />
+<gap:splash src="splash/ios/Default.png" gap:platform="ios" width="320" height="480" />
+<gap:splash src="splash/ios/Default_at_2x.png" gap:platform="ios" width="640" height="960" />
+<gap:splash src="splash/ios/Default_iphone5.png" gap:platform="ios" width="640" height="1136" />
 
-    <name>Medcab Beta</name>
+<content src="index.html" />
 
-    <description>
-        Beta Phonegap for Medcab Refills 
-    </description>
+<access origin="http://maps.google.com" />
+<access origin="http://drive.google.com" />
+<access origin="http://translate.google.com" />
+<access origin="*" />
+<gap:splash src="splash.png" />
+<gap:plugin name="com.phonegap.plugins.facebookconnect" >
+<param name="APP_ID" value="831441453536379" /> 
+<param name="APP_NAME" value="WP8 Icon Test App" /> 
+</gap:plugin>
+<gap:plugin name="com.phonegap.plugin.statusbar"  />
+<gap:plugin name="nl.x-services.plugins.insomnia" />
+<gap:plugin name="net.tunts.webintent" version="0.2.1" />
+<gap:plugin name="com.phonegap.plugins.barcodescanner" version="1.1.0" />
+<gap:plugin name="com.ohh2ahh.plugins.appavailability" version="0.2.0"/>
+<gap:config-file platform="android" parent="/manifest">
+      <supports-screens 
+ android:xlargeScreens="false" 
+ android:largeScreens="false" 
+ android:smallScreens="false" />
+<!--<application android:theme="@android:style/Theme.NoTitleBar" android:hardwareAccelerated="false">-->
+<!--<application android:label="@string/app_name" android:icon="@drawable/icon" android:debuggable="false" android:hardwareAccelerated="false">
+<activity android:label="@string/app_name" android:name=".WP8IconTestApp" android:screenOrientation="unspecified" android:configChanges="locale|keyboard|keyboardHidden|orientation|screenSize" android:windowSoftInputMode="stateUnspecified|adjustUnspecified" android:hardwareAccelerated="false">
+<intent-filter>
+<action android:name="android.intent.action.SEND" />
+<category android:name="android.intent.category.DEFAULT" />
+<data android:mimeType="image/*" />
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.SEND" />
+<category android:name="android.intent.category.DEFAULT" />
+<data android:mimeType="text/plain" />
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.SEND_MULTIPLE" />
+<category android:name="android.intent.category.DEFAULT" />
+<data android:mimeType="image/*" />
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.MAIN" />
+<category android:name="android.intent.category.LAUNCHER" />
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.VIEW"></action>
+<category android:name="android.intent.category.DEFAULT"></category>
+<category android:name="android.intent.category.BROWSABLE"></category>
+<data android:host="www.youtube.com" android:scheme="http"></data>
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.SEND" />
+<category android:name="android.intent.category.DEFAULT" />
+<data android:mimeType="image/*" />
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.SEND" />
+<category android:name="android.intent.category.DEFAULT" />
+<data android:mimeType="text/plain" />
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.SEND_MULTIPLE" />
+<category android:name="android.intent.category.DEFAULT" />
+<data android:mimeType="image/*" />
+</intent-filter>
+</activity>
+<activity android:name="IntentTest" android:label="@string/app_name" android:configChanges="orientation|keyboardHidden">
+<intent-filter>
+<action android:name="android.intent.action.MAIN" />
+<category android:name="android.intent.category.LAUNCHER" />
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.VIEW"></action>
+<category android:name="android.intent.category.DEFAULT"></category>
+<category android:name="android.intent.category.BROWSABLE"></category>
+<data android:host="www.youtube.com" android:scheme="http"></data>
+</intent-filter>
 
-    <author href="http://www.davidsheffield.org" email="jeremiah.sheffield@gmail.com">
-        David Sheffield
-    </author>
-    
-    <icon src="icon.png" />
-    
-    <gap:plugin name="org.apache.cordova.dialogs" />
-    
-    
+</activity>-->
+<!--<activity android:label="@string/app_name" android:name="com.phonegap.DroidGap" android:configChanges="orientation|keyboardHidden">
+<intent-filter>
+<action android:name="android.intent.action.MAIN" />
+<category android:name="android.intent.category.LAUNCHER" />
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.VIEW"></action>
+<category android:name="android.intent.category.DEFAULT"></category>
+<category android:name="android.intent.category.BROWSABLE"></category>
+<data android:host="www.youtube.com" android:scheme="http"></data>
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.SEND" />
+<category android:name="android.intent.category.DEFAULT" />
+<data android:mimeType="image/*" />
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.SEND" />
+<category android:name="android.intent.category.DEFAULT" />
+<data android:mimeType="text/plain" />
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.SEND_MULTIPLE" />
+<category android:name="android.intent.category.DEFAULT" />
+<data android:mimeType="image/*" />
+</intent-filter>
+</activity>
+<activity>
+<intent-filter>
+<action android:name="android.intent.action.SEND" />
+<category android:name="android.intent.category.DEFAULT" />
+<data android:mimeType="image/*" />
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.SEND" />
+<category android:name="android.intent.category.DEFAULT" />
+<data android:mimeType="text/plain" />
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.SEND_MULTIPLE" />
+<category android:name="android.intent.category.DEFAULT" />
+<data android:mimeType="image/*" />
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.MAIN" />
+<category android:name="android.intent.category.LAUNCHER" />
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.VIEW"></action>
+<category android:name="android.intent.category.DEFAULT"></category>
+<category android:name="android.intent.category.BROWSABLE"></category>
+<data android:host="www.youtube.com" android:scheme="http"></data>
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.SEND" />
+<category android:name="android.intent.category.DEFAULT" />
+<data android:mimeType="image/*" />
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.SEND" />
+<category android:name="android.intent.category.DEFAULT" />
+<data android:mimeType="text/plain" />
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.SEND_MULTIPLE" />
+<category android:name="android.intent.category.DEFAULT" />
+<data android:mimeType="image/*" />
+</intent-filter>
+</activity>
+</application>	-->
+<!--<activity android:name=".ui.MyActivity" >
 
+</activity>-->
+<!--</application>-->
+   </gap:config-file>
+<gap:config-file platform="android" parent="/application">
+<activity android:label="@string/app_name" android:name=".WP8IconTestApp" android:screenOrientation="unspecified" android:configChanges="locale|keyboard|keyboardHidden|orientation|screenSize" android:windowSoftInputMode="stateUnspecified|adjustUnspecified" android:hardwareAccelerated="false">
+<intent-filter>
+<action android:name="android.intent.action.SEND" />
+<category android:name="android.intent.category.DEFAULT" />
+<data android:mimeType="image/*" />
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.SEND" />
+<category android:name="android.intent.category.DEFAULT" />
+<data android:mimeType="text/plain" />
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.SEND_MULTIPLE" />
+<category android:name="android.intent.category.DEFAULT" />
+<data android:mimeType="image/*" />
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.MAIN" />
+<category android:name="android.intent.category.LAUNCHER" />
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.VIEW"></action>
+<category android:name="android.intent.category.DEFAULT"></category>
+<category android:name="android.intent.category.BROWSABLE"></category>
+<data android:host="www.youtube.com" android:scheme="http"></data>
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.SEND" />
+<category android:name="android.intent.category.DEFAULT" />
+<data android:mimeType="image/*" />
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.SEND" />
+<category android:name="android.intent.category.DEFAULT" />
+<data android:mimeType="text/plain" />
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.SEND_MULTIPLE" />
+<category android:name="android.intent.category.DEFAULT" />
+<data android:mimeType="image/*" />
+</intent-filter>
+</activity>
+<!--<activity android:name="IntentTest" android:label="@string/app_name" android:configChanges="orientation|keyboardHidden">
+<intent-filter>
+<action android:name="android.intent.action.MAIN" />
+<category android:name="android.intent.category.LAUNCHER" />
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.VIEW"></action>
+<category android:name="android.intent.category.DEFAULT"></category>
+<category android:name="android.intent.category.BROWSABLE"></category>
+<data android:host="www.youtube.com" android:scheme="http"></data>
+</intent-filter>
+
+</activity>-->
+<activity android:label="@string/app_name" android:name="com.phonegap.DroidGap" android:configChanges="orientation|keyboardHidden">
+<intent-filter>
+<action android:name="android.intent.action.MAIN" />
+<category android:name="android.intent.category.LAUNCHER" />
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.VIEW"></action>
+<category android:name="android.intent.category.DEFAULT"></category>
+<category android:name="android.intent.category.BROWSABLE"></category>
+<data android:host="www.youtube.com" android:scheme="http"></data>
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.SEND" />
+<category android:name="android.intent.category.DEFAULT" />
+<data android:mimeType="image/*" />
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.SEND" />
+<category android:name="android.intent.category.DEFAULT" />
+<data android:mimeType="text/plain" />
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.SEND_MULTIPLE" />
+<category android:name="android.intent.category.DEFAULT" />
+<data android:mimeType="image/*" />
+</intent-filter>
+</activity>
+<activity>
+<intent-filter>
+<action android:name="android.intent.action.SEND" />
+<category android:name="android.intent.category.DEFAULT" />
+<data android:mimeType="image/*" />
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.SEND" />
+<category android:name="android.intent.category.DEFAULT" />
+<data android:mimeType="text/plain" />
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.SEND_MULTIPLE" />
+<category android:name="android.intent.category.DEFAULT" />
+<data android:mimeType="image/*" />
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.MAIN" />
+<category android:name="android.intent.category.LAUNCHER" />
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.VIEW"></action>
+<category android:name="android.intent.category.DEFAULT"></category>
+<category android:name="android.intent.category.BROWSABLE"></category>
+<data android:host="www.youtube.com" android:scheme="http"></data>
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.SEND" />
+<category android:name="android.intent.category.DEFAULT" />
+<data android:mimeType="image/*" />
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.SEND" />
+<category android:name="android.intent.category.DEFAULT" />
+<data android:mimeType="text/plain" />
+</intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.SEND_MULTIPLE" />
+<category android:name="android.intent.category.DEFAULT" />
+<data android:mimeType="image/*" />
+</intent-filter>
+</activity>
+   </gap:config-file>
+<gap:config-file platform="ios" parent="UIBackgroundModes" overwrite="true">
+<array>
+<string>audio</string>
+</array>
+</gap:config-file>
 </widget>
-
