@@ -19,6 +19,6 @@
     
     <icon src="icon.png" />
     
-    <gap:plugin name="org.apache.cordova.dialogs" version="0.2.6" />
+    <gap:plugin name="org.apache.cordova.dialogs.Notification" version="0.2.6" />
 
 </widget>
