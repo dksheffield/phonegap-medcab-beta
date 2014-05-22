@@ -12,10 +12,15 @@
         alert('Test');
         navigator.notification.alert("Cordova is ready!");
       }
+      
+      function alert() {
+          alert('You clicked alert...');   
+      }
     </script>
   </head>
   <body onload="onBodyLoad()">
     <h1>HelloWorld2</h1>
     <p>This is a sample Cordova application.</p>
+    <a onclick="alert();">ALert</a>
   </body>
 </html>
