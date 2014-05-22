@@ -19,8 +19,8 @@
     
     <icon src="icon.png" />
     
+    <gap:plugin name="org.apache.cordova.dialogs" />
     
 
 </widget>
 
-<gap:plugin name="org.apache.cordova.dialogs" />
