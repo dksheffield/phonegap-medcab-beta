@@ -1,46 +1,86 @@
+
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" id="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+    <title>Notification Example</title>
+
     <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
-    
     <script type="text/javascript" charset="utf-8">
-      function onBodyLoad() {
-        document.addEventListener("deviceready",onDeviceReady, false);
-      }
-      function onDeviceReady() {
-        alert('Test');
-        navigator.notification.alert("Cordova is ready!");
-      }
-      
-      
-      
-      
+
+    // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        // Empty
+    }
+
+    // alert dialog dismissed
+        function alertDismissed() {
+            // do something
+        }
+
+    // Show a custom alertDismissed
+    //
+    function showAlert() {
+        navigator.notification.alert(
+            'You are the winner!',  // message
+            alertDismissed,         // callback
+            'Game Over',            // title
+            'Done'                  // buttonName
+        );
+    }
+	
+	function onConfirm(buttonIndex) {
+        alert('You selected button ' + buttonIndex);
+    }
+
+    // Show a custom confirmation dialog
+    //
+    function showConfirm() {
+        navigator.notification.confirm(
+            'You are the winner!', // message
+             onConfirm,            // callback to invoke with index of button pressed
+            'Game Over',           // title
+            'Restart,Exit'         // buttonLabels
+        );
+    }
+	
+	function onPrompt(results) {
+        alert("You selected button number " + results.buttonIndex + " and entered " + results.input1);
+    }
+
+    // Show a custom prompt dialog
+    //
+    function showPrompt() {
+        navigator.notification.prompt(
+            'Please enter your name',  // message
+            onPrompt,                  // callback to invoke
+            'Registration',            // title
+            ['Ok','Exit'],             // buttonLabels
+            'Jane Doe'                 // defaultText
+        );
+    }
+	
+	function playBeep() {
+        navigator.notification.beep(3);
+    }
+
+    // Vibrate for 2 seconds
+    //
+    function vibrate() {
+        navigator.notification.vibrate(2000);
+    }
+
     </script>
   </head>
-  <body onload="onBodyLoad()">
-    <h1>HelloWorld2</h1>
-    <p>This is a sample Cordova application.</p>
-    <a onclick="showAlert();">Alert</a>
+  <body>
+    <p><a href="#" onclick="showAlert(); return false;">Show Alert</a></p>
+	<p><a href="#" onclick="showConfirm(); return false;">Show Confirm</a></p>
+	<p><a href="#" onclick="showPrompt(); return false;">Show Prompt</a></p>
+    <p><a href="#" onclick="playBeep(); return false;">Play Beep</a></p>
+    <p><a href="#" onclick="vibrate(); return false;">Vibrate</a></p>
   </body>
 </html>
-
-<script>
-    function showAlert() {
-          alert('You clicked alert...'); 
-          console.log('trying to show notification');
-          navigator.notification.alert(
-    'You are the winner!',  // message
-    alertDismissed,         // callback
-    'Game Over',            // title
-    'Done'                  // buttonName
-);
-          console.log('just showed notification');
-          alert('If you see this, then the code did not break!');
-      }
-      
-      function alertDismissed() {
-           alert('You dismissed');   
-      }
-</script>
