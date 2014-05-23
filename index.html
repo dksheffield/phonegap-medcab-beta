@@ -1,80 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Notification Example</title>
+<head>
+	<title>ePharmacy</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
     <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
-    <script type="text/javascript" charset="utf-8">
-        // Wait for device API libraries to load
-        //
-        document.addEventListener("deviceready", onDeviceReady, false);
+    
+	<link rel="stylesheet" href="jquerymobile/jquery.mobile-1.4.2.min.css" />
+	<script src="jquerymobile/jquery-1.4.2.min.js"></script>
+	<script src="js/jquery_2.1.1.js"></script>
+</head>
+<body>
 
-        function onDeviceReady() {
-            // Empty
-        }
+<div data-role="page">
 
-        // alert dialog dismissed
-        function alertDismissed() {
-            // do something
-        }
+	<div data-role="header">
+		<h1>Page Title</h1>
+	</div><!-- /header -->
 
-        function showAlert() {
-            navigator.notification.alert(
-                'You are the winner!',  // message
-                alertDismissed,         // callback
-                'Game Over',            // title
-                'Done'                  // buttonName
-            );
-        }
-	
-    	function onConfirm(buttonIndex) {
-            alert('You selected button ' + buttonIndex);
-        }
+	<div role="main" class="ui-content">
+		<p>Page content goes here.</p>
+	</div><!-- /content -->
 
-        // Show a custom confirmation dialog
-        //
-        function showConfirm() {
-            navigator.notification.confirm(
-                'You are the winner!', // message
-                 onConfirm,            // callback to invoke with index of button pressed
-                'Game Over',           // title
-                'Restart,Exit'         // buttonLabels
-            );
-        }
-	
-    	function onPrompt(results) {
-            alert("You selected button number " + results.buttonIndex + " and entered " + results.input1);
-        }
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
 
-        // Show a custom prompt dialog
-        //
-        function showPrompt() {
-            navigator.notification.prompt(
-                'Please enter your name',  // message
-                onPrompt,                  // callback to invoke
-                'Registration',            // title
-                ['Ok','Exit'],             // buttonLabels
-                'Jane Doe'                 // defaultText
-            );
-        }
-	
-    	function playBeep() {
-            navigator.notification.beep(3);
-        }
-
-        // Vibrate for 2 seconds
-        //
-        function vibrate() {
-            navigator.notification.vibrate(2000);
-        }
-
-    </script>
-  </head>
-  <body>
-    <p><a href="#" onclick="showAlert(); return false;">Show Alert</a></p>
-	<p><a href="#" onclick="showConfirm(); return false;">Show Confirm</a></p>
-	<p><a href="#" onclick="showPrompt(); return false;">Show Prompt</a></p>
-    <p><a href="#" onclick="playBeep(); return false;">Play Beep</a></p>
-    <p><a href="#" onclick="vibrate(); return false;">Vibrate</a></p>
-  </body>
+</body>
 </html>
