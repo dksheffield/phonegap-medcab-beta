@@ -34,7 +34,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="#">The Medicine Cabinet</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -84,5 +84,14 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/jquery_2.1.1.js"></script>
     <script src="bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      function onBodyLoad() {
+        document.addEventListener("deviceready",onDeviceReady, false);
+      }
+      function onDeviceReady() {
+        alert('Test');
+        navigator.notification.alert("Cordova is ready!");
+      }
+    </script>
   </body>
 </html>
