@@ -11,7 +11,11 @@
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-
+    
+    <!-- Bootstrap core JavaScript -->
+    <script src="js/jquery_2.1.1.js"></script>
+    <script src="bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
@@ -20,6 +24,16 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    <script type="text/javascript" charset="utf-8">
+      function onBodyLoad() {
+        document.addEventListener("deviceready",onDeviceReady, false);
+      }
+      function onDeviceReady() {
+        alert('Test');
+        navigator.notification.alert("Cordova is ready!");
+      }
+    </script>
   </head>
 
   <body>
@@ -79,19 +93,6 @@
     </div> <!-- /container -->
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery_2.1.1.js"></script>
-    <script src="bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" charset="utf-8">
-      function onBodyLoad() {
-        document.addEventListener("deviceready",onDeviceReady, false);
-      }
-      function onDeviceReady() {
-        alert('Test');
-        navigator.notification.alert("Cordova is ready!");
-      }
-    </script>
+    
   </body>
 </html>
