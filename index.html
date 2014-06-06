@@ -33,8 +33,7 @@
         document.addEventListener("deviceready",onDeviceReady, false);
       }
       function onDeviceReady() {
-        alert('Test');
-        navigator.notification.alert("Cordova is ready!");
+        console.log(device.uuid);
       }
     </script>
   </head>
